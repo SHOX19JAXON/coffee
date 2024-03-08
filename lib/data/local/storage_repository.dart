@@ -1,15 +1,16 @@
-import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class StorageRepository {
   static final StorageRepository instance = StorageRepository._();
   static SharedPreferences? _preference;
 
-  StorageRepository._();
+  StorageRepository._() {
+    _init();
+  }
 
   factory StorageRepository() => instance;
 
-  static Future<void> init() async {
+  Future<void> _init() async {
     _preference = await SharedPreferences.getInstance();
   }
 
@@ -18,7 +19,6 @@ class StorageRepository {
     required int value,
   }) async {
     if (_preference != null) {
-      debugPrint("SAVING INT:$value");
       _preference!.setInt(key, value);
     }
   }
@@ -35,7 +35,6 @@ class StorageRepository {
     required String value,
   }) async {
     if (_preference != null) {
-      debugPrint("SAVING STRING:$value");
       _preference!.setString(key, value);
     }
   }
@@ -52,7 +51,6 @@ class StorageRepository {
     required bool value,
   }) async {
     if (_preference != null) {
-      debugPrint("SAVING BOOL:$value");
       _preference!.setBool(key, value);
     }
   }
@@ -69,7 +67,6 @@ class StorageRepository {
     required double value,
   }) async {
     if (_preference != null) {
-      debugPrint("SAVING DOUBLE:$value");
       _preference!.setDouble(key, value);
     }
   }
@@ -86,7 +83,6 @@ class StorageRepository {
     required List<String> values,
   }) async {
     if (_preference != null) {
-      debugPrint("SAVING LIST:$values");
       _preference!.setStringList(key, values);
     }
   }

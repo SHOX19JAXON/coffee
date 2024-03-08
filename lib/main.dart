@@ -1,8 +1,9 @@
+import 'package:coffee/screens/splash_screen.dart';
 import 'package:coffee/utils/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
-import 'home_screen.dart';
+import 'screens/home_screen.dart';
 
 
 
@@ -30,12 +31,12 @@ class MyApp extends StatelessWidget {
                 debugShowCheckedModeBanner: false,
                 theme: theme,
                 darkTheme: darkTheme,
-                home: HomeScreen(),
+                home: SplashScreen(),
               );
             },
           );
         },
-        child:const HomeScreen()
+        child:const SplashScreen()
 
     );
   }

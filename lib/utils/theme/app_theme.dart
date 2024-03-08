@@ -1,9 +1,10 @@
+import 'package:coffee/utils/colors/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class AppTheme {
   static final ThemeData lightTheme = ThemeData(
-    scaffoldBackgroundColor: Colors.blue,
+    scaffoldBackgroundColor: AppColors.c_0C0F14,
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.white,
       systemOverlayStyle: SystemUiOverlayStyle(
